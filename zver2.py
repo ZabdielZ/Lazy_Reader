@@ -130,25 +130,30 @@ def funcion():
         ventana_secundaria.geometry('1000x1000')
         ventana_secundaria.title("Reproductor")
         ventana_secundaria.config(width=1000, height=1000)
+        imagen_back2 = ImageTk.PhotoImage(file = "images/b2blue.jpg")
+        background2 = tk.Label(image = imagen_back2, text = "Imagen de fondo")
+        background2.place(x = 0, y = 0, relwidth = 1, relheight = 1)
     
          #Cargar las imágenes de los botones "Pausar" y "Reanudar"
-        pausar_image = ImageTk.PhotoImage(file="images/pause.jpeg")
-        reanudar_image = ImageTk.PhotoImage(file="images/play.jpeg")
-        play_image = ImageTk.PhotoImage(file="images/play.jpeg")
+        pausar_image = ImageTk.PhotoImage(file="images/mpause.jpg")
+        reanudar_image = ImageTk.PhotoImage(file="images/mreanudar.jpg")
+        play_image = ImageTk.PhotoImage(file="images/mplay.jpg")
+        home_image = ImageTk.PhotoImage(file="images/home2.png")
+	
 
-        btn_reproducir = tk.Button(ventana_secundaria,image=play_image,state=tk.NORMAL ,command=iniciar_reproduccion, bd=3)
+        btn_reproducir = tk.Button(ventana_secundaria,image=play_image,state=tk.NORMAL ,command=iniciar_reproduccion, bd=1)
         btn_reproducir.place(x=300, y=0)
 
-        btn_pause = tk.Button(ventana_secundaria,image=pausar_image,state=tk.NORMAL ,command=pausar_reproduccion,bd=3)
+        btn_pause = tk.Button(ventana_secundaria,image=pausar_image,state=tk.NORMAL ,command=pausar_reproduccion,bd=2)
         btn_pause.place(x=350, y=0)
 
         btn_resume = tk.Button(ventana_secundaria, image=reanudar_image,state=tk.DISABLED ,command=reanudar_reproduccion,bd=3)
         btn_resume.place(x=400, y=0)
 
-        btn_viewer = tk.Button(ventana_secundaria,text='view',state=tk.NORMAL, command=visualizador_pdf,bd=3)
+        btn_viewer = tk.Button(ventana_secundaria,text='view',state=tk.NORMAL, command=visualizador_pdf,bd=4)
         btn_viewer.place(x=500, y=0)
 
-        btn_destroy = tk.Button(ventana_secundaria,text='go back',state =tk.NORMAL ,command=lambda:[destroy(),ventana_secundaria.destroy()],bd=3)
+        btn_destroy = tk.Button(ventana_secundaria,text='go back',image=home_image,state =tk.NORMAL ,command=lambda:[destroy(),ventana_secundaria.destroy()])
         btn_destroy.place(x=600, y=0)
 
         btn_reproducir.config(state=tk.NORMAL)
@@ -178,6 +183,9 @@ window.title("Conversor de PDF a Audio")
 image_path = ImageTk.PhotoImage(file='images/logo.jpeg') 
 label_title = tk.Label(window, image=image_path)
 label_title.pack(pady=20)
+imagen_back1 = ImageTk.PhotoImage(file = "images/main2bb.png")
+background = tk.Label(image = imagen_back1, text = "Imagen de fondo")
+background.place(x = 0, y = 0, relwidth = 1, relheight = 1)
 #Pruebas de abrir paginas nuevas
 #btn_convertir = tk.Button(window, text="otra pagina", command=funcion)
 #btn_convertir.pack(pady=20)
